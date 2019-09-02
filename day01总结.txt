@@ -1,0 +1,113 @@
+spring 核心技术 springIOC DI AOP 事务传播行为()
+
+什么是spring?
+spring是一个容器 将管理每个bean(对象)与beans(对象)之间的关系
+使用spring进行管理 
+
+好处 : 解耦 单例(节约内存) 
+
+
+任何对象初始化过程,全部都要交给spring管理.
+
+
+
+springIOC ?
+
+控制反转 将bean对象交给spring容器进行管理 
+反射--创建对象  解析xml demo4j
+
+
+
+( 不用springIOC 的话 分为三层
+控制层---web层
+业务逻辑层--service层
+数据访问层--dao层 )
+
+
+DI  依赖注入  依赖  解决对象之间的依赖关系 ( ! )
+
+
+spring环境搭建
+xml (复杂)
+注解---为主流
+
+
+spring jar包  项目核心的为spring-core  spring-context 
+spring-orm 与数据库的映射
+aop是依赖于cglib 动态代理
+
+
+int与integer的区别
+
+int 基本数据类型 默认值0 不能为null
+Integer 引用数据类型 int包装类 可以为null
+
+
+单例singleton  jvm只能允许存在一次
+多例prototype  每次运行都会创建一次
+request 请求作用域
+session 对象和session绑定管理
+
+spring对象默认是单例的 
+
+怎么证明对象是单例的? 查看构造函数 通过反射
+
+使用单例 注意事项: 线程安全问题 
+
+单例 分为懒汉式饿汉式  spring中使用的是 饿汉式 线程安全 
+
+多例 不会产生线程安全问题 
+
+spring bean id相同 会出现什么问题? 报错
+
+springIOC 默认创建 无构造函数  
+
+@repository  表示dao注入spring 
+@service  表示service注入spring 
+
+@autowired 和@resource区别
+@autowired 默认是以类型查找的
+@resource默认是以名称进行查找的  jdbc new对象的时候才用到
+
+
+代理设计模式? 作用:提高对目标对象进行访问方式(中介)  
+好处: 提高安全性 aop,事务 
+静态代理和动态代理
+
+静态代理和动态地理区别?
+静态代理需要生成代理类
+动态代理不需要代理类 
+
+
+spring AOP 面向切面编程 应用场景: 权限控制,事务管理,日志打印,性能统计
+什么地方会用到AOP?  代码重复  
+在不同的方法中 但是需要相同的操作
+ 
+AOP	关注点       重复代码
+	  切面       抽取重复代码
+ 	  切入点    拦截方法
+
+springAOP方式  注解
+	          xml----  事务管理  
+
+aop底层是不是代理设计模式 
+
+springaop 有哪些? 前置通知 后置通知 异常通知 环绕通知
+
+springAOP方式  注解
+@before 前置通知 在方法之前通知 
+@after 后置通知:在方法之后通知  
+@afterrun 运行通知:在方法运行时通知	
+@afterthrowing 异常通知:方法异常之后通知
+@execution 环绕通知:在方法前后进行通知
+
+
+
+
+
+
+
+
+
+
+
