@@ -1,0 +1,7 @@
+SpringBoot异常处理
+@ExceptionHandler
+功能:自动捕获controller层出现的制定类型的异常,并对该异常进行相应的异常处理,比如在controller层处理…exception类型异常,就可以在controller层的类中定义方法
+如果想要一个方法处理多种类型异常,就需要在({…,…})以’,’逗号分隔
+@RestControllerAdvice
+@ControllerAdvice和@RestControllerAdvice都可以指向控制器的一个子集
+ 当我们定义了一个自定义返回参数格式时,希望得到同意的返回,发生异常,也希望将异常统一返回,就需要用到@ControllerAdvice或者@RestControllerAdvice(如果全部异常处理返回json.就可以使用@RestControllerAdvice代替@ControllerAdvice)这样在方法上就可以不需要添加@ResponseBody

@@ -1,0 +1,19 @@
+什么是Spring?
+Spring是一个容器,管理bean(对象)与bean之间的关系,使用spring进行管理,
+可以整合框架,和struts,hibernate
+集成redis,mq,mongidb…都交给spring容器管理
+作用域:
+Singleton 单例
+Prototype 原型(多例:调用bean方法,才能初始化)
+Request  http请求request作用域里
+Session   http请求在session作用域里
+
+核心技术  
+1.IOC  管理bean与bean之间的关系
+2. DI  依赖注入
+3. AOP  面向切面编程 (利用了AOP做事务管理)  与传播行为
+Spring的好处
+  解耦,单例节约内现存,
+  缺点:线程不安全
+
+任何对象初始化的过程,都要注入Spring容器
